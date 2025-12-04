@@ -10,5 +10,5 @@ void main() {
 
   print("Precio al contado: $P");
   print("Precio por cuotas: $precioCuotas");
-  print("El porcentaje de recargo es: ${recargo.toStringAsFixed(2)}%");
+  print("El porcentaje de recargo es: $recargo%");
 }

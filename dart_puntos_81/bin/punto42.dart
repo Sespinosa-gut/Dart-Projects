@@ -1,23 +1,15 @@
-import 'dart:io';
+double edad = 0.8;
+String sexo = "H";
+double hemoglobina = 13.5;
 
 void main() {
+  double min = 0;
+  double max = 0;
 
-  stdout.write("Ingrese la edad en años (use decimales si es menor de 1): ");
-  double edad = double.parse(stdin.readLineSync()!);
-
-  stdout.write("Ingrese el sexo (M para mujer, H para hombre): ");
-  String sexo = stdin.readLineSync()!.toUpperCase();
-
-  stdout.write("Ingrese el nivel de hemoglobina (g%): ");
-  double hemoglobina = double.parse(stdin.readLineSync()!);
-
-  double min = 0, max = 0;
-
-
-  if (edad >= 0 && edad <= 1/12) {
+  if (edad >= 0 && edad <= 1 / 12) {
     min = 13;
     max = 26;
-  } else if (edad > 1/12 && edad <= 0.5) {
+  } else if (edad > 1 / 12 && edad <= 0.5) {
     min = 10;
     max = 18;
   } else if (edad > 0.5 && edad <= 1) {
@@ -33,7 +25,6 @@ void main() {
     min = 13;
     max = 15.5;
   } else {
-
     if (sexo == "M") {
       min = 12;
       max = 16;
@@ -41,14 +32,13 @@ void main() {
       min = 14;
       max = 18;
     } else {
-      print("Sexo inválido.");
       return;
     }
   }
 
   if (hemoglobina < min) {
-    print("\nResultado: POSITIVO → La persona tiene anemia.");
+    print("Resultado: POSITIVO La persona tiene anemia.");
   } else {
-    print("\nResultado: NEGATIVO → La persona NO tiene anemia.");
+    print("Resultado: NEGATIVO La persona no tiene anemia.");
   }
 }

@@ -1,16 +1,8 @@
-import 'dart:io';
+double anterior = 120.0;
+double actual = 350.0;
 
 void main() {
-
-  stdout.write("Lectura anterior: ");
-  double anterior = double.parse(stdin.readLineSync()!);
-
-  stdout.write("Lectura actual: ");
-  double actual = double.parse(stdin.readLineSync()!);
-
-
   double consumo = actual - anterior;
-
   double costo = 0;
 
   if (consumo >= 0 && consumo <= 100) {
@@ -22,11 +14,24 @@ void main() {
   } else if (consumo >= 501) {
     costo = 97.95 * consumo;
   } else {
-    print("Error: el consumo no puede ser negativo.");
     return;
   }
 
-
-  print("\nConsumo total: $consumo Kwh");
-  print("Monto a pagar: ${costo.toStringAsFixed(2)} Bs.");
+  print("Consumo total: $consumo Kwh");
+  print("Monto a pagar: $costo");
 }
+
+// MITAD DEL TALLER POR FIN
+
+/*
+⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣆⠻⡫⣢⠿⣿⣿⣿⣿⣿⣿⣿⣷⣜⢻⣿
+⣿⣿⡏⣿⣿⣨⣝⠿⣿⣿⣿⣿⣿⢕⠸⣛⣩⣥⣄⣩⢝⣛⡿⠿⣿⣿⣆⢝
+⣿⣿⢡⣸⣿⣏⣿⣿⣶⣯⣙⠫⢺⣿⣷⡈⣿⣿⣿⣿⡿⠿⢿⣟⣒⣋⣙⠊
+⣿⡏⡿⣛⣍⢿⣮⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⢱⣾⣿⣿⣿⣝⡮⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣋⣻⣿⣿⣿⣿
+⢿⢸⣿⣿⣿⣿⣿⣿⣷⣽⣿⣿⣿⣿⣿⣿⣿⡕⣡⣴⣶⣿⣿⣿⡟⣿⣿⣿
+⣦⡸⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿
+⢛⠷⡹⣿⠋⣉⣠⣤⣶⣶⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⢹⣿⣿
+⣷⡝⣿⡞⣿⣿⣿⣿⣿⣿⣿⣿⡟⠋⠁⣠⣤⣤⣦⣽⣿⣿⣿⡿⠋⠘⣿⣿
+⣿⣿⡹⣿⡼⣿⣿⣿⣿⣿⣿⣿⣧⡰⣿⣿⣿⣿⣿⣹⡿⠟⠉⡀⠄⠄⢿⣿
+⣿⣿⣿⣽⣿⣼⣛⠿⠿⣿⣿⣿⣿⣿⣯⣿⠿⢟⣻⡽⢚⣤⡞⠄⠄⠄⢸⣿*/
