@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../modelos/contador_proveedor.dart';
 
-/// Ejemplo de gestión de estado con Provider
-/// El estado se comparte entre diferentes widgets usando ChangeNotifier
 class PantallaProvider extends StatelessWidget {
   const PantallaProvider({super.key});
 
@@ -23,7 +21,6 @@ class PantallaProvider extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
-            // Consumer escucha los cambios del ContadorProveedor
             Consumer<ContadorProveedor>(
               builder: (context, contadorProveedor, child) {
                 return Column(
@@ -51,7 +48,6 @@ class PantallaProvider extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Accede al proveedor y llama a decrementar
                     Provider.of<ContadorProveedor>(context, listen: false)
                         .decrementar();
                   },
@@ -70,7 +66,6 @@ class PantallaProvider extends StatelessWidget {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Accede al proveedor y llama a incrementar
                     Provider.of<ContadorProveedor>(context, listen: false)
                         .incrementar();
                   },
@@ -91,7 +86,6 @@ class PantallaProvider extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Accede al proveedor y llama a reiniciar
                 Provider.of<ContadorProveedor>(context, listen: false)
                     .reiniciar();
               },
@@ -115,7 +109,6 @@ class PantallaProvider extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
             ),
             const SizedBox(height: 15),
-            // Otro Consumer que muestra el mismo contador
             Consumer<ContadorProveedor>(
               builder: (context, contadorProveedor, child) {
                 return Container(

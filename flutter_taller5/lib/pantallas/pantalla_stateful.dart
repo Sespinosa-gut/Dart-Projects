@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Ejemplo de gestión de estado con StatefulWidget
-/// El estado es local al widget y se usa para interacciones simples
 class PantallaStateful extends StatefulWidget {
   const PantallaStateful({super.key});
 
@@ -10,7 +8,6 @@ class PantallaStateful extends StatefulWidget {
 }
 
 class _PantallaStatefulState extends State<PantallaStateful> {
-  // Estado local del contador
   int _contador = 0;
   bool _interruptor = false;
 

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Ejemplo de Lifting State Up
-/// El estado se "sube" al widget padre para compartirlo entre varios hijos
 class PantallaLiftingState extends StatefulWidget {
   const PantallaLiftingState({super.key});
 
@@ -10,10 +8,8 @@ class PantallaLiftingState extends StatefulWidget {
 }
 
 class _PantallaLiftingStateState extends State<PantallaLiftingState> {
-  // El estado está en el widget padre
   String _textoCompartido = 'Texto inicial';
 
-  // Método para actualizar el estado desde los hijos
   void _actualizarTexto(String nuevoTexto) {
     setState(() {
       _textoCompartido = nuevoTexto;
@@ -36,17 +32,14 @@ class _PantallaLiftingStateState extends State<PantallaLiftingState> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
-            // Widget hijo que muestra el estado
             WidgetHijoMostrar(
               texto: _textoCompartido,
             ),
             const SizedBox(height: 40),
-            // Widget hijo que modifica el estado
             WidgetHijoModificar(
               onTextoCambiado: _actualizarTexto,
             ),
             const SizedBox(height: 20),
-            // Otro widget hijo que también muestra el estado
             WidgetHijoMostrar(
               texto: _textoCompartido,
             ),
@@ -57,7 +50,6 @@ class _PantallaLiftingStateState extends State<PantallaLiftingState> {
   }
 }
 
-/// Widget hijo que solo muestra el texto (recibe el estado como parámetro)
 class WidgetHijoMostrar extends StatelessWidget {
   final String texto;
 
@@ -96,7 +88,6 @@ class WidgetHijoMostrar extends StatelessWidget {
   }
 }
 
-/// Widget hijo que modifica el texto (llama a un callback del padre)
 class WidgetHijoModificar extends StatelessWidget {
   final Function(String) onTextoCambiado;
 

@@ -15,7 +15,6 @@ class MiAplicacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      // Proporciona el ContadorProveedor a toda la aplicación
       create: (context) => ContadorProveedor(),
       child: MaterialApp(
         title: 'Gestión de Estado en Flutter',
@@ -30,7 +29,6 @@ class MiAplicacion extends StatelessWidget {
   }
 }
 
-/// Pantalla principal con menú de navegación a los ejemplos
 class PantallaPrincipal extends StatelessWidget {
   const PantallaPrincipal({super.key});
 
@@ -119,7 +117,6 @@ class PantallaPrincipal extends StatelessWidget {
   }
 }
 
-/// Widget reutilizable para los botones de navegación
 class _BotonNavegacion extends StatelessWidget {
   final String titulo;
   final String descripcion;
